@@ -1,8 +1,12 @@
 import { Router } from "express";
-import { test } from "../controllers/index.js";
+import { createUser, createTask, readTasks } from "../controllers/index.js";
 
 const router = Router();
 
-router.get('/api/v1/test', test);
+router.post('/api/users/', createUser);
+
+router.post('/api/tasks/create/', createTask);
+
+router.get('/api/tasks/:userId', readTasks);
 
 export default router;

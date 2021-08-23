@@ -7,9 +7,9 @@ import bodyParser from 'body-parser';
 const app = express();
 const port = 4000;
 
+app.use(bodyParser.json());
 app.use(cors());
 app.use(routes);
-app.use(bodyParser.json());
 
 const uri = 'mongodb://127.0.0.1:27019/TaskTracker';
 const options = {
